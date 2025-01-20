@@ -20,7 +20,9 @@ a {
 }
 /* 로고 */
 .logo {
-  width: 15%;
+  width: 10%;
+  max-width: 150px;
+  min-width: 100px;
 }
 .logo img {
   display: block;
@@ -29,6 +31,7 @@ a {
 /* 메뉴 */
 nav {
   width: 50%;
+  max-width: 750px;
 }
 nav .gnb {
   width: 100%;
@@ -42,24 +45,77 @@ nav .gnb > li {
 }
 nav .gnb > li > a {
   width: 100%;
-  background-color: red;
   display: block;
 }
-/* 메뉴 내부 */
+/* 서브 메뉴 호버로 나오게 하기 */
+nav .gnb:hover .depth2 {
+  display: block;
+}
+/* 서브 메뉴 */
 nav .depth2 {
   position: absolute;
   top: 60px;
   width: 100%;
+  display: none; /*호버 효과줘야해서 안보이게하기*/
+  background-color: yellowgreen;
 }
 nav .depth2 > li > a {
   line-height: 50px;
 }
+/* 모바일용 메뉴 */
+.mobile-nav {
+  display: none;/*반응형에서 나와야 하기때문*/
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+}
+.mobile-nav .gnb {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav .gnb > li {
+}
+.mobile-nav .gnb > li > a {
+  display: block;
+  padding: 15px;
+  background-color: #444;
+  color: #fff;
+  font-size: 18px;
+}
+.mobile-nav .depth2 > li > a {
+  display: block;
+  padding: 10px;
+  background-color: #666;
+  color: white;
+  font-size: 16px;
+}
+.mobile-nav .depth2 {
+    display: none;
+}
+.mobile-nav a {
+  color: #fff;
+}
+/* X 버튼 */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 /* 사용자 */
 .user {
   width: 15%;
+  max-width: 200px;
+  min-width: 150px;
   display: flex;
   justify-content: space-between;
   text-align: center;
+  background-color: pink;
 }
 /*  아이콘 크기 변경 */
 .user li {
@@ -68,4 +124,31 @@ nav .depth2 > li > a {
 /* 모바일일때 나타나야함 */
 .mb-xi {
   display: none;
+}
+
+/* 반응형 */
+/* 내부 메뉴가 672px 일때 보이게하기 */
+@media screen and (max-width: 672px) {
+  nav .gnb {
+    display: none;
+  }
+  .mb-xi {
+    display: block;
+  }
+  .user {
+    gap: 10px;
+  }
+  .mobile-nav {
+    display: block;
+  }
+
+}
+@media screen and (max-width: 390px) {
+  .header {
+    padding: 0 20px;
+  }
+  .user {
+    gap: 0px;
+  }
+
 }
