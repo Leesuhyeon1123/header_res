@@ -18,6 +18,15 @@ a {
   justify-content: space-around;
   background-color: antiquewhite;
 }
+.header-bg {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
 /* 로고 */
 .logo {
   width: 10%;
@@ -42,35 +51,40 @@ nav .gnb > li {
   position: relative;
   width: calc(100% / 4);
   text-align: center;
+  /* line-height: 90px; */
 }
 nav .gnb > li > a {
   width: 100%;
   display: block;
+  line-height: 90px;
+  background-color: red;
 }
 /* 서브 메뉴 호버로 나오게 하기 */
-nav .gnb:hover .depth2 {
+/* nav .gnb:hover .depth2 {
   display: block;
-}
+} */
 /* 서브 메뉴 */
 nav .depth2 {
   position: absolute;
-  top: 60px;
+  top: 90px;
   width: 100%;
   display: none; /*호버 효과줘야해서 안보이게하기*/
-  background-color: yellowgreen;
+  background-color: red;
 }
 nav .depth2 > li > a {
   line-height: 50px;
 }
 /* 모바일용 메뉴 */
 .mobile-nav {
-  display: none;/*반응형에서 나와야 하기때문*/
+  /* display: none; */
   position: fixed;
   top: 0;
   right: -300px;
   width: 250px;
   height: 100vh;
   background-color: #333;
+  color: #fff;
+  padding-top: 60px;
 }
 .mobile-nav .gnb {
   display: flex;
@@ -85,6 +99,9 @@ nav .depth2 > li > a {
   color: #fff;
   font-size: 18px;
 }
+.mobile-nav .depth2 {
+  display: none;
+}
 .mobile-nav .depth2 > li > a {
   display: block;
   padding: 10px;
@@ -92,9 +109,7 @@ nav .depth2 > li > a {
   color: white;
   font-size: 16px;
 }
-.mobile-nav .depth2 {
-    display: none;
-}
+
 .mobile-nav a {
   color: #fff;
 }
@@ -141,7 +156,6 @@ nav .depth2 > li > a {
   .mobile-nav {
     display: block;
   }
-
 }
 @media screen and (max-width: 390px) {
   .header {
@@ -150,5 +164,4 @@ nav .depth2 > li > a {
   .user {
     gap: 0px;
   }
-
 }
